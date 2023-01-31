@@ -1,0 +1,20 @@
+[workspace]
+members = [
+    "bin/server",
+    "bin/client",
+    "lib/common-protocol",
+    "lib/common-pow",
+]
+
+[workspace.dependencies]
+tokio = { version = "1.24.2", features = ["full"] }
+thiserror = "1.0.34"
+anyhow = "1.0.66"
+log = "0.4.17"
+
+serde = { version = "1.0.147", features = ["derive", "rc"] }
+serde_json = "1.0.87"
+cbor4ii = { version = "0.2.14", features = ["serde1"] }
+
+common-protocol = { path = "lib/common-protocol" }
+common-pow = { path = "lib/common-pow" }

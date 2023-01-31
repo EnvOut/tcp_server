@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  server:
+    build:
+      dockerfile: ./bin/server/Dockerfile
+      context: .
+    ports:
+      - '8080:8080'
+
+  client:
+    build:
+      dockerfile: ./bin/client/Dockerfile
+      context: .
+    environment:
+      - SERVER_ADDRESS=server:8080
